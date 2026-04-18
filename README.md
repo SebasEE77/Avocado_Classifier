@@ -28,9 +28,9 @@ npm run dev -- --host
 ```
 The terminal will show something like this:
 ```
-  ➜  Local:   http://localhost:5173/inicio
-  ➜  Network: http://192.168.X.X:5173/inicio
-  ➜  Network: http://192.168.1.X:5173/inicio
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: http://192.168.X.X:5173/
+  ➜  Network: http://192.168.1.X:5173/
 ```
 Copy the third option and open it in your phone's browser. The device must be connected to the same WiFi network as your computer.
 
