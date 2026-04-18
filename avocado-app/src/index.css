@@ -52,14 +52,16 @@
 
 body {
   margin: 0;
+  background-color: #F4F7F4;
 }
+
 
 #root {
   width: 1126px;
   max-width: 100%;
   margin: 0 auto;
   text-align: center;
-  border-inline: 1px solid var(--border);
+  border-inline: 1px solid #F4F7F4;
   min-height: 100svh;
   display: flex;
   flex-direction: column;
