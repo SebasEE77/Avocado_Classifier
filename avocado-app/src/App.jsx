@@ -1,17 +1,15 @@
 import { useState, useRef } from "react"
+import { useNavigate } from "react-router-dom"
+import Results from "./Results.jsx"
 import "./App.css"
 
 export default function App() {
   const [preview, setPreview] = useState(null)
   const [imagen, setImagen] = useState(null)
+  const [resultado, setResultado] = useState(null)
+  const navigate = useNavigate()
   const inputRef = useRef(null)
   const inputCamaraRef = useRef(null)
-
-  // const handleArchivo = (archivo) => {
-  //   if (!archivo) return
-  //   setImagen(archivo)
-  //   setPreview(URL.createObjectURL(archivo))
-  // }
 
   const handleArchivo = (archivo) => {
     if (!archivo) return
@@ -33,7 +31,31 @@ export default function App() {
     handleArchivo(e.dataTransfer.files[0])
   }
 
+  const handleAnalizar = () => {
+    const res = {
+      clase: "Maduro",
+      confianza: 85,
+      dias: 3,
+    }
+    setResultado(res)
+    navigate("/resultados", { state: { preview, resultado: res } })
+  }
+
   const handleDragOver = (e) => e.preventDefault()
+
+  if (resultado) {
+    return (
+      <Results
+        preview={preview}
+        resultado={resultado}
+        onReintentar={() => {
+          setResultado(null)
+          setPreview(null)
+          setImagen(null)
+        }}
+      />
+    )
+  }
 
   return (
     <div className="min-h-screen bg-[#F4F7F4] flex items-center justify-center px-4 py-10">
@@ -139,7 +161,7 @@ export default function App() {
 
           {/* Analizar — aparece cuando hay imagen */}
           {imagen && (
-            <button className="btn-analizar">
+            <button className="btn-analizar" onClick={handleAnalizar}>
               Analizar aguacate
             </button>
           )}

@@ -1,0 +1,82 @@
+.resultado-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.resultado-card {
+  background: #f9fbf7;
+  border: 1.5px solid #C0DD97;
+  border-radius: 16px;
+  padding: 1rem 1.25rem;
+}
+
+.resultado-label {
+  font-size: 0.78rem;
+  font-weight: 670;
+  color: #6b7280;
+  margin: 0 0 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.resultado-valor {
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .resultado-valor {
+    font-size: 2rem;
+  }
+}
+
+.confianza-card {
+  background: #f9fbf7;
+  border: 1.5px solid #C0DD97;
+  border-radius: 16px;
+  padding: 1rem 1.25rem;
+}
+
+.confianza-titulo {
+  font-size: 0.89rem;
+  font-weight: 600;
+  color: #374151;
+  margin: 0 0 10px;
+}
+
+.confianza-fila {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.confianza-clase {
+  font-size: 0.90rem;
+  color: #4b5563;
+  min-width: 60px;
+  font-weight: 600;
+}
+
+.confianza-barra-bg {
+  flex: 1;
+  background: #e5e7eb;
+  border-radius: 999px;
+  height: 8px;
+}
+
+.confianza-barra-fill {
+  background: #2D5A1B;
+  border-radius: 999px;
+  height: 8px;
+  transition: width 0.6s ease;
+}
+
+.confianza-pct {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #2D5A1B;
+  min-width: 36px;
+  text-align: right;
+}
