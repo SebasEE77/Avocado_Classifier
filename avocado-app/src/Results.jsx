@@ -40,19 +40,21 @@ export default function Results() {
             <p className="resultado-valor" style={{ color: "#2D5A1B" }}>{resultado.dias} días</p>
             </div>
         </div>
-
-        {/* BARRA DE CONFIANZA */}
+        
+        {/* BARRA DE PROBABILIDAD - Solo clase ganadora */}
         <div className="confianza-card mb-6">
             <p className="confianza-titulo">Porcentaje de precisión de la predicción</p>
             <div className="confianza-fila">
-            <span className="confianza-clase">{resultado.clase}</span>
-            <div className="confianza-barra-bg">
-                <div
-                className="confianza-barra-fill"
-                style={{ width: `${resultado.confianza}%` }}
-                />
-            </div>
-            <span className="confianza-pct">{resultado.confianza}%</span>
+                <span className="confianza-clase">{resultado.clase}</span>
+                <div className="confianza-barra-bg">
+                    <div
+                        className="confianza-barra-fill"
+                        style={{ width: `${resultado.probabilidades[resultado.clase]}%` }}
+                    />
+                </div>
+                <span className="confianza-pct">
+                    {resultado.probabilidades[resultado.clase]}%
+                </span>
             </div>
         </div>
 

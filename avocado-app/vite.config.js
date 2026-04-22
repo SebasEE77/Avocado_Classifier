@@ -9,5 +9,8 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
+  server: {
+    allowedHosts: ['depress-humorless-closable.ngrok-free.dev']
+  }
   
 })

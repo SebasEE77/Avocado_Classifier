@@ -1,6 +1,5 @@
 import { useState, useRef } from "react"
 import { useNavigate } from "react-router-dom"
-import Results from "./Results.jsx"
 import "./App.css"
 
 export default function App() {
@@ -31,31 +30,25 @@ export default function App() {
     handleArchivo(e.dataTransfer.files[0])
   }
 
-  const handleAnalizar = () => {
-    const res = {
-      clase: "Maduro",
-      confianza: 85,
-      dias: 3,
+  const handleAnalizar = async () => {
+    // Armar el formulario con la imagen para enviársela al servidor
+    const formData = new FormData()
+    formData.append("file", imagen)
+
+    try {
+        const respuesta = await fetch(`${import.meta.env.VITE_API_URL}/predecir`, {
+            method: "POST",
+            body: formData
+        })
+        const res = await respuesta.json()
+        setResultado(res)
+        navigate("/resultados", { state: { preview, resultado: res } })
+    } catch (error) {
+        alert("No se pudo conectar con el servidor. ¿Está Colab corriendo?")
     }
-    setResultado(res)
-    navigate("/resultados", { state: { preview, resultado: res } })
   }
 
   const handleDragOver = (e) => e.preventDefault()
-
-  if (resultado) {
-    return (
-      <Results
-        preview={preview}
-        resultado={resultado}
-        onReintentar={() => {
-          setResultado(null)
-          setPreview(null)
-          setImagen(null)
-        }}
-      />
-    )
-  }
 
   return (
     <div className="min-h-screen bg-[#F4F7F4] flex items-center justify-center px-4 py-10">
