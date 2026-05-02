@@ -10,7 +10,7 @@ export default defineConfig({
     tailwindcss(),
   ],
   server: {
-    allowedHosts: ['depress-humorless-closable.ngrok-free.dev']
+    allowedHosts: ['depress-humorless-closable.ngrok-free.dev'] // Link del ngrok
   }
   
 })

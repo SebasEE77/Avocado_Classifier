@@ -60,7 +60,7 @@ export default function App() {
           <h2 className="titulo-principal">El punto exacto de tu aguacate</h2>
           <p className="subtitulo">
             Toma una foto de tu aguacate y en segundos te decimos si ya está
-            listo para comer y cuántos días le quedan para pudrirse.
+            listo para comer y cuántos días le quedan para descomponerse.
             Solamente tienes que...
           </p>
         </div>
