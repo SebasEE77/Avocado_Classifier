@@ -15,6 +15,19 @@ Then, install the dependencies:
 ```
 npm install
 ```
+### Backend Setup
+The backend runs on Google Colab and uses the trained model weights stored in Google Drive. Before running the frontend, you need to start the backend first.
+1. Open the notebook Proyecto_Modelos_Definitivos.ipynb in Google Colab.
+2. Make sure the model weights are stored in your Google Drive.
+3. Go to the "Conexión con la Interfaz" section on Google Colab and run that cell. It will install the required dependencies, load both models and start the FastAPI server exposed through ngrok.
+4. Once the cell finishes loading, it will print a public URL like this:
+```
+📡 Endpoint: https://xxxx-xxxx-xxxx.ngrok-free.dev
+```
+5. Copy that URL and paste it in the .env file at the root of the frontend project:
+```
+VITE_API_URL=https://xxxx-xxxx-xxxx.ngrok-free.dev
+```
 ### Running
 To run the website normally use
 ```
