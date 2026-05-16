@@ -36,7 +36,7 @@ export default function App() {
     formData.append("file", imagen)
 
     try {
-        const respuesta = await fetch(`${import.meta.env.VITE_API_URL}/predecir`, {
+        const respuesta = await fetch(`${import.meta.env.VITE_BACKEND_URL}/predecir`, {
             method: "POST",
             body: formData
         })
