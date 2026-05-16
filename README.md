@@ -22,11 +22,11 @@ The backend runs on Google Colab and uses the trained model weights stored in Go
 3. Go to the "Conexión con la Interfaz" section on Google Colab and run that cell. It will install the required dependencies, load both models and start the FastAPI server exposed through ngrok.
 4. Once the cell finishes loading, it will print a public URL like this:
 ```
-📡 Endpoint: https://xxxx-xxxx-xxxx.ngrok-free.dev
+Endpoint: https://xxxx-xxxx-xxxx.ngrok-free.dev
 ```
 5. Copy that URL and paste it in the .env file at the root of the frontend project:
 ```
-VITE_API_URL=https://xxxx-xxxx-xxxx.ngrok-free.dev
+VITE_BACKEND_URL=https://xxxx-xxxx-xxxx.ngrok-free.dev
 ```
 ### Running
 To run the website normally use
